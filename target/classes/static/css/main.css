@@ -1,0 +1,151 @@
+@-webkit-keyframes searchStart {
+    100% {
+        margin-top: 0;
+    }
+}
+
+@keyframes searchStart {
+    100% {
+        margin-top: 0;
+    }
+}
+
+@-webkit-keyframes searchEnd {
+    100% {
+        margin-top: 200px;
+    }
+}
+
+@keyframes searchEnd {
+    100% {
+        margin-top: 200px;
+    }
+}
+
+@-webkit-keyframes foundanimation {
+    0%{
+        padding-top: 50px;
+        opacity: 0;
+    }
+
+    100%{
+        padding-top: 0px;
+        opacity: 1;
+    }
+}
+
+@keyframes foundanimation {
+    0%{
+        padding-top: 50px;
+        opacity: 0;
+    }
+
+    100%{
+        padding-top: 0px;
+        opacity: 1;
+    }
+}
+
+
+@-webkit-keyframes uhohanimation {
+    0% {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    20% {
+        padding-left: 0;
+        padding-right: 50px;
+    }
+    40% {
+        padding-left: 50px;
+        padding-right: 0;
+    }
+    60% {
+        padding-left: 0;
+        padding-right: 50px;
+    }
+    80% {
+        padding-left: 50px;
+        padding-right: 0;
+    }
+    100% {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+@keyframes uhohanimation {
+    0% {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    20% {
+        padding-left: 0;
+        padding-right: 50px;
+    }
+    40% {
+        padding-left: 50px;
+        padding-right: 0;
+    }
+    60% {
+        padding-left: 0;
+        padding-right: 50px;
+    }
+    80% {
+        padding-left: 50px;
+        padding-right: 0;
+    }
+    100% {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+@font-face {
+    font-family: Roboto;
+    src: url(./../../res/fonts/Roboto/Roboto-Thin.ttf);
+}
+
+body {
+    background-color: lightpink;
+}
+
+select {
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+p{
+    color: black;
+    font-family: Roboto;
+}
+
+#MainLabelHeader {
+    text-align: center;
+    font-size: 500%;
+    font-family: Roboto;
+    margin-top: 50px;
+    color: white;
+}
+
+#SearchBar {
+    font-size: 200%;
+}
+
+#wefound {
+    text-align: center;
+    color: lawngreen;
+    animation: 2s ease 0s 1 normal forwards running foundanimation;
+}
+
+.resultcard{
+    background-color: white;
+    border: black 2px solid;
+    margin-bottom: 50px;
+    padding: 20px;
+}
+
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Nanny Search</title>
+
+    <link rel="icon" href="./res/img/icon.png">
+
+    <link rel="stylesheet" type="text/css" th:href="@{bootstrap/dist/css/bootstrap.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{css/main.css}">
+</head>
+<body>
+    <div class="container">
+        <div id="MainLabel" class="row">
+            <h1 id="MainLabelHeader" class="h1 col">Nanny Search</h1>
+        </div>
+
+        <!--/*@thymesVar id="query" type="ch.usi.pulfer.nanny_search.models.Query"*/-->
+        <form action="#" th:action="@{/index}" th:object="${query}" method="post">
+            <div id="SearchDiv" class="row">
+                    <input
+                            autocomplete="off"
+                            th:field = "*{text}"
+                            id="SearchBar"
+                            class="col-md-10 col-xs-8"
+                            type="text"
+                            name="queryText"
+                            placeholder="Search for nannies"
+                    />
+                    <button type="submit" name="submitquery" id="SearchButton" class="col-md-2 col-xs-4 btn btn-success">
+                        Search
+                    </button>
+
+            </div>
+            <div id="FilterDiv" class="row">
+                <select th:field="*{location}" class="col-md-3 col-xs-3" name="location">
+                    <option value="Any">Location: Any</option>
+                    <option value="Bedfordshire">Bedfordshire</option>
+                    <option value="Berkshire">Berkshire</option>
+                    <option value="Bristol">Bristol</option>
+                    <option value="Buckinghamshire">Buckinghamshire</option>
+                    <option value="Cambridgeshire">Cambridgeshire</option>
+                    <option value="Cheshire">Cheshire</option>
+                    <option value="London">City of London</option>
+                    <option value="Cornwall">Cornwall</option>
+                    <option value="Cumbria">Cumbria</option>
+                    <option value="Derbyshire">Derbyshire</option>
+                    <option value="Devon">Devon</option>
+                    <option value="Dorset">Dorset</option>
+                    <option value="Durham">Durham</option>
+                    <option value="East Riding of Yorkshire">East Riding of Yorkshire</option>
+                    <option value="East Sussex">East Sussex</option>
+                    <option value="Essex">Essex</option>
+                    <option value="Gloucestershire">Gloucestershire</option>
+                    <option value="Greater London">Greater London</option>
+                    <option value="Greater Manchester">Greater Manchester</option>
+                    <option value="Hampshire">Hampshire</option>
+                    <option value="Herefordshire">Herefordshire</option>
+                    <option value="Hertfordshire">Hertfordshire</option>
+                    <option value="Isle of Wight">Isle of Wight</option>
+                    <option value="Kent">Kent</option>
+                    <option value="Lancashire">Lancashire</option>
+                    <option value="Leicestershire">Leicestershire</option>
+                    <option value="Lincolnshire">Lincolnshire</option>
+                    <option value="Merseyside">Merseyside</option>
+                    <option value="Norfolk">Norfolk</option>
+                    <option value="Norfolk Yorkshire">North Yorkshire</option>
+                    <option value="Northamptonshire">Northamptonshire</option>
+                    <option value="Northumberland">Northumberland</option>
+                    <option value="Nottinghamshire">Nottinghamshire</option>
+                    <option value="Oxfordshire">Oxfordshire</option>
+                    <option value="Rutland">Rutland</option>
+                    <option value="Shropshire">Shropshire</option>
+                    <option value="Somerset">Somerset</option>
+                    <option value="South Yorkshire">South Yorkshire</option>
+                    <option value="Staffordshire">Staffordshire</option>
+                    <option value="Suffolk">Suffolk</option>
+                    <option value="Surrey">Surrey</option>
+                    <option value="Tyne and Wear">Tyne and Wear</option>
+                    <option value="Warwickshire">Warwickshire</option>
+                    <option value="West Midlands">West Midlands</option>
+                    <option value="West Sussex">West Sussex</option>
+                    <option value="West Yorkshire">West Yorkshire</option>
+                    <option value="Wiltshire">Wiltshire</option>
+                    <option value="Worcestershire">Worcestershire</option>
+                </select>
+                <select th:field="*{experience}" class="col-md-3 col-xs-3" name="experience">
+                    <option value="Any">Experience: Any</option>
+                    <option value="1 year">Low</option>
+                    <option value="2 years">Medium</option>
+                    <option value="3 years">High</option>
+                </select>
+                <select th:field="*{minAge}" class="col-md-3 col-xs-3" name="minAge">
+                    <option value="Any">Min Age: Any</option>
+                    <option value="18">Min Age: 18</option>
+                    <option value="19">Min Age: 19</option>
+                    <option value="20">Min Age: 20</option>
+                    <option value="21">Min Age: 21</option>
+                    <option value="22">Min Age: 22</option>
+                    <option value="23">Min Age: 23</option>
+                    <option value="24">Min Age: 24</option>
+                    <option value="25">Min Age: 25</option>
+                    <option value="26">Min Age: 26</option>
+                    <option value="27">Min Age: 27</option>
+                    <option value="28">Min Age: 28</option>
+                    <option value="29">Min Age: 29</option>
+                    <option value="30">Min Age: 30+</option>
+                </select>
+                <select th:field="*{maxAge}" class="col-md-3 col-xs-3" name="maxAge">
+                    <option value="Any">Max Age: Any</option>
+                    <option value="18">Max Age: 18</option>
+                    <option value="19">Max Age: 19</option>
+                    <option value="20">Max Age: 20</option>
+                    <option value="21">Max Age: 21</option>
+                    <option value="22">Max Age: 22</option>
+                    <option value="23">Max Age: 23</option>
+                    <option value="24">Max Age: 24</option>
+                    <option value="25">Max Age: 25</option>
+                    <option value="26">Max Age: 26</option>
+                    <option value="27">Max Age: 27</option>
+                    <option value="28">Max Age: 28</option>
+                    <option value="29">Max Age: 29</option>
+                    <option value="30">Max Age: 30+</option>
+                </select>
+            </div>
+        </form>
+
+        <div id="ResultsDiv" th:if="${Results}">
+            <div th:if="${#lists.size(Results) == 0}" style="margin-top: 100px">
+                <div class="row">
+                    <h1 id="uh-oh" class="col h1" style="text-align: center; color: red;
+                    animation: 0.5s ease 0s 1 normal forwards running uhohanimation">
+                        Uh-oh...
+                    </h1>
+                </div>
+                <div class="row">
+                    <h1 class="col h3" style="color: red">No results were found for your search...</h1>
+                </div>
+            </div>
+            <div th:if="${#lists.size(Results) != 0}" style="margin-top: 100px">
+                <div class="row">
+                    <h1 id="wefound" class="col h1" >
+                        We found <span th:text="${#lists.size(Results)}">SIZE</span> Nannies
+                    </h1>
+                </div>
+                <a th:each="result : ${Results}" th:href="${result.getLink()}" style="text-decoration: none">
+                    <div class="resultcard">
+                        <h3 class="text-center" th:text="${result.getName()}">NAME</h3>
+                        <h4 class="text-center" th:text="${result.getTitle()}">TITLE</h4>
+                        <p th:text="${result.getSmallText()}">TEXT</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <script src="./js/main.js"></script>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
